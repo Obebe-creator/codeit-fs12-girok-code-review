@@ -37,3 +37,31 @@ for (let l = 1; l <= 5; l++) {
 
   console.log(star);
 }
+
+// **도전 과제:**
+
+console.log(`=== 도전 과제 ===`);
+
+// 1. 역삼각형 별 찍기
+
+for (let n = 1; n <= 5; n++) {
+  let star2 = "";
+
+  for (let o = 5; o >= n; o--) {
+    star2 = star2 + "*";
+  }
+
+  console.log(star2);
+}
+// 2. 짝수 단만 출력
+
+for (let p = 1; p <= 5; p++) {
+  console.log(p * 2);
+}
+// 3. 특정 결과값 이상만 출력
+
+for (let q = 1; q <= 10; q++) {
+  if (q > 5) {
+    console.log(q);
+  }
+}
