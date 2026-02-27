@@ -67,15 +67,15 @@ const avr4 = sum4 / 3;
 
 // TODO: 최고 점수 학생 찾기
 
-let top = avr3[0];
+let best = avr3[0];
 for (let i = 0; i <= avr3.length; i++) {
-  if (top < avr3[i]) {
-    top = avr3[i];
+  if (best < avr3[i]) {
+    best = avr3[i];
   }
 }
 
 let n = 0;
-switch (top) {
+switch (best) {
   case avr3[0]:
     n = 0;
   case avr3[1]:
@@ -84,7 +84,7 @@ switch (top) {
     n = 2;
 }
 
-const topStu = students[n].name;
+const bestStu = students[n].name;
 
 console.log(`=== 전체 통계 ===`);
 console.log(`${students[0].name}: 평균 ${avr3[0]}점`);
@@ -93,4 +93,42 @@ console.log(`${students[2].name}: 평균 ${avr3[2]}점`);
 
 console.log(`전체 학생: 평균 ${avr4}점`);
 
-console.log(`최고 점수: ${topStu} (${top}점)`);
+console.log(`최고 점수: ${bestStu} (${best}점)`);
+
+// **도전 과제:**
+
+console.log(`=== 도전 과제 ===`);
+
+// 1. 과목별 평균 계산
+
+const korSum = students[0].korean + students[1].korean + students[2].korean;
+const engSum = students[0].english + students[1].english + students[2].english;
+const mathSum = students[0].math + students[1].math + students[2].math;
+
+const korEvr = korSum / 3;
+const engEvr = engSum / 3;
+const mathEvr = mathSum / 3;
+
+console.log(`국어 평균: ${korEvr}`);
+console.log(`영어 평균: ${engEvr}`);
+console.log(`수학 평균: ${mathEvr}`);
+
+// 2. 학점 계산(A, B, C, D, F)
+for (m = 0; m < 3; m++) {
+  console.log(`${students[m].name} 평균 점수: ${avr3[m]}`);
+
+  if (avr3[m] >= 90) {
+    console.log(`${students[m].name} 학점: A`);
+  } else if (avr3[m] >= 80) {
+    console.log(`${students[m].name} 학점: B`);
+  } else if (avr3[m] >= 70) {
+    console.log(`${students[m].name} 학점: C`);
+  } else if (avr3[m] >= 60) {
+    console.log(`${students[m].name} 학점: D`);
+  } else {
+    console.log(`${students[m].name} 학점: F`);
+  }
+}
+
+// 3. 성적순 정렬
+// 포기하겠습니;다 .... 도저히 모르겠습니다 ..........
