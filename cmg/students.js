@@ -9,15 +9,18 @@ const scores = [85, 90, 78];
 // 김철수: 90점
 // 이영희: 78점
 
-console.log(`${names[0]}: ${scores[0]}`);
-console.log(`${names[1]}: ${scores[1]}`);
-console.log(`${names[2]}: ${scores[2]}`);
+console.log(`=== 학생별 성적 ===`);
+console.log(`${names[0]}: ${scores[0]}점`);
+console.log(`${names[1]}: ${scores[1]}점`);
+console.log(`${names[2]}: ${scores[2]}점`);
 
 // TODO: 평균 점수 계산
 
-const num = scores[0] + scores[1] + scores[2];
+const sum = scores[0] + scores[1] + scores[2];
+const avr = sum / 3;
 
-console.log(`평균: ${num / 3}`);
+console.log(`=== 전체 학생 평균 ===`);
+console.log(`전체 평균: ${avr}점`);
 
 // 학생 객체
 const student = {
@@ -28,15 +31,17 @@ const student = {
 };
 
 // TODO: 총점 계산
-const sum = student.korean + student.english + student.math;
+const sum2 = student.korean + student.english + student.math;
 
 // TODO: 평균 계산
 
-const avr = sum / 3;
+const avr2 = sum2 / 3;
 
 // TODO: 결과 출력
 
-console.log(`홍길동 평균: ${avr}`);
+console.log(`=== 학생 통계 ===`);
+console.log(`${student.name} 총점: ${sum2}`);
+console.log(`${student.name} 평균: ${avr2}`);
 
 // 여러 학생 관리
 const students = [
@@ -47,18 +52,45 @@ const students = [
 
 // TODO: 각 학생의 평균 계산
 
-const sum2 = [
+const sum3 = [
   students[0].korean + students[0].english + students[0].math,
   students[1].korean + students[1].english + students[1].math,
   students[2].korean + students[2].english + students[2].math,
 ];
 
-const avr2 = [sum2[0] / 3, sum2[1] / 3, sum2[2] / 3];
-
-console.log(`홍길동 평균2: ${avr2[0]}`);
-console.log(`김철수 평균2: ${avr2[1]}`);
-console.log(`이영희 평균2: ${avr2[2]}`);
+const avr3 = [sum3[0] / 3, sum3[1] / 3, sum3[2] / 3];
 
 // TODO: 전체 학생 평균 계산
 
+const sum4 = avr3[0] + avr3[1] + avr3[2];
+const avr4 = sum4 / 3;
+
 // TODO: 최고 점수 학생 찾기
+
+let top = avr3[0];
+for (let i = 0; i <= avr3.length; i++) {
+  if (top < avr3[i]) {
+    top = avr3[i];
+  }
+}
+
+let n = 0;
+switch (top) {
+  case avr3[0]:
+    n = 0;
+  case avr3[1]:
+    n = 1;
+  case avr3[2]:
+    n = 2;
+}
+
+const topStu = students[n].name;
+
+console.log(`=== 전체 통계 ===`);
+console.log(`${students[0].name}: 평균 ${avr3[0]}점`);
+console.log(`${students[1].name}: 평균 ${avr3[1]}점`);
+console.log(`${students[2].name}: 평균 ${avr3[2]}점`);
+
+console.log(`전체 학생: 평균 ${avr4}점`);
+
+console.log(`최고 점수: ${topStu} (${top}점)`);
