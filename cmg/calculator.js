@@ -36,3 +36,37 @@ console.log(`${num1} / ${num2} = ${div}`);
 const rem = num1 % num2;
 
 console.log(`${num1} % ${num2} = ${rem}`);
+
+// **도전 과제:**
+
+console.log(`=== 도전 과제 ===`);
+
+// 1. 복합 계산 추가 (예: (a + b) * c)
+
+const num3 = 2;
+const hard = (num1 + num2) * num3;
+
+console.log(`(${num1} + ${num2}) * ${num3} = ${hard}`);
+
+// 2. 템플릿 리터럴로 출력 형식 개선
+// 이미 실천 중
+
+// 3. 다른 숫자로도 테스트
+
+const num4 = 6;
+const num5 = 3;
+const num6 = 7;
+
+const sum2 = num4 + num5;
+const sub2 = num4 - num5;
+const mul2 = num4 * num5;
+const div2 = num4 / num5;
+const rem2 = num4 % num5;
+const hard2 = (num4 + num5) * num6;
+
+console.log(`${num4} + ${num5} = ${sum2}`);
+console.log(`${num4} - ${num5} = ${sub2}`);
+console.log(`${num4} * ${num5} = ${mul2}`);
+console.log(`${num4} / ${num5} = ${div2}`);
+console.log(`${num4} % ${num5} = ${rem2}`);
+console.log(`(${num4} + ${num5}) * ${num6} = ${hard2}`);
