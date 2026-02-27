@@ -4,8 +4,6 @@ const score = 85;
 
 // TODO: if-else 문으로 학점 계산
 
-// TODO: switch 문으로도 구현해보기 (도전!)
-
 console.log(`점수: ${score}`);
 
 if (score >= 90) {
@@ -19,6 +17,8 @@ if (score >= 90) {
 } else {
   console.log(`학점: F`);
 }
+
+// TODO: switch 문으로도 구현해보기 (도전!)
 
 switch (true) {
   case score >= 90:
