@@ -1,0 +1,31 @@
+// LV.1
+// 5단 출력
+const dan = 5;
+
+for (let i = 1; i <= 9; i++) {
+	dan * i
+
+	console.log(dan + ' * ' + i + ' = '+(dan*i))
+}
+
+// LV.2
+// TODO: 2단부터 9단까지 모두 출력
+for ( let j = 2; j <=9; j++){
+for (let i = 1; i <= 9; i++) {
+	j * i
+
+	console.log(j + ' * ' + i + ' = '+(j*i))
+}
+}
+
+// LV.3
+// TODO: 다음 패턴 출력
+// *
+// **
+// ***
+// ****
+// *****
+
+for (let i = 1; i <= 5; i++){
+	console.log('*'.repeat(i))
+}
