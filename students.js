@@ -92,7 +92,7 @@ console.log(
   `최고 점수 학생: ${topStudent.name} (${topStudent.average.toFixed(2)}점)`,
 );
 
-// 도전 과제: 과목별 평균 계산
+// 도전 과제1: 과목별 평균 계산
 console.log("=== 과목별 평균 ===");
 let totalKorean = 0;
 let totalEnglish = 0;
@@ -112,8 +112,8 @@ console.log(`국어 평균: ${averageKorean.toFixed(2)}점`);
 console.log(`영어 평균: ${averageEnglish.toFixed(2)}점`);
 console.log(`수학 평균: ${averageMath.toFixed(2)}점`);
 
-// 도전 과제: 학점 계산 (A, B, C, D, F)
-console.log("=== 학생별 과목 학점 === ");
+// 도전 과제2: 학점 계산 (A, B, C, D, F)
+console.log("=== 학생별 과목 학점 ===");
 
 function calculateGrade(score) {
   if (score >= 90) return "A";
@@ -131,4 +131,15 @@ for (let student of students) {
   console.log(`${student.name} 국어 학점: ${koreanGrade}`);
   console.log(`${student.name} 영어 학점: ${englishGrade}`);
   console.log(`${student.name} 수학 학점: ${mathGrade}`);
+}
+
+// 도전 과제3: 성적순 정렬
+console.log("=== 평균 기준 등수 ===");
+
+const sortedStudents = [...students].sort((a, b) => b.average - a.average);
+
+for (let i = 0; i < students.length; i++) {
+  console.log(
+    `${i + 1}등: ${sortedStudents[i].name} - 평균 ${sortedStudents[i].average.toFixed(2)}점`,
+  );
 }
