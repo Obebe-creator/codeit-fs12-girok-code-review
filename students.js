@@ -91,3 +91,23 @@ for (let student of students) {
 console.log(
   `최고 점수 학생: ${topStudent.name} (${topStudent.average.toFixed(2)}점)`,
 );
+
+// 도전 과제: 과목별 평균 계산
+console.log("=== 과목별 평균 ===");
+let totalKorean = 0;
+let totalEnglish = 0;
+let totalMath = 0;
+
+for (let student of students) {
+  totalKorean += student.korean;
+  totalEnglish += student.english;
+  totalMath += student.math;
+}
+
+const averageKorean = totalKorean / students.length;
+const averageEnglish = totalEnglish / students.length;
+const averageMath = totalMath / students.length;
+
+console.log(`국어 평균: ${averageKorean.toFixed(2)}점`);
+console.log(`영어 평균: ${averageEnglish.toFixed(2)}점`);
+console.log(`수학 평균: ${averageMath.toFixed(2)}점`);
