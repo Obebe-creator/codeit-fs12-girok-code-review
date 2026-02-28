@@ -111,3 +111,24 @@ const averageMath = totalMath / students.length;
 console.log(`국어 평균: ${averageKorean.toFixed(2)}점`);
 console.log(`영어 평균: ${averageEnglish.toFixed(2)}점`);
 console.log(`수학 평균: ${averageMath.toFixed(2)}점`);
+
+// 도전 과제: 학점 계산 (A, B, C, D, F)
+console.log("=== 학생별 과목 학점 === ");
+
+function calculateGrade(score) {
+  if (score >= 90) return "A";
+  if (score >= 80) return "B";
+  if (score >= 70) return "C";
+  if (score >= 60) return "D";
+  return "F";
+}
+
+for (let student of students) {
+  const koreanGrade = calculateGrade(student.korean);
+  const englishGrade = calculateGrade(student.english);
+  const mathGrade = calculateGrade(student.math);
+
+  console.log(`${student.name} 국어 학점: ${koreanGrade}`);
+  console.log(`${student.name} 영어 학점: ${englishGrade}`);
+  console.log(`${student.name} 수학 학점: ${mathGrade}`);
+}
