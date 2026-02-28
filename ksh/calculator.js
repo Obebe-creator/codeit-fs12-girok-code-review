@@ -14,7 +14,7 @@ const subtraction = num1 - num2;
 console.log(subtraction);
 
 // TODO: 곱셈 결과 계산 및 출력
-const multiplication = num1 - num2;
+const multiplication = num1 * num2;
 console.log(multiplication);
 
 // TODO: 나눗셈 결과 계산 및 출력
