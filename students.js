@@ -60,34 +60,34 @@ const students = [
 console.log("=== 학생별 성적 ===");
 for (let student of students) {
   let total = student.korean + student.english + student.math;
-  let average = total / 3;
-  console.log(`${student.name}: 평균 ${average.toFixed(2)}점`);
+  student.average = total / 3; // 객체에 평균 추가
+}
+
+for (let student of students) {
+  console.log(`${student.name} 평균: ${student.average.toFixed(2)}`);
 }
 
 // TODO: 전체 학생 평균 계산
-let totalSum = 0;
+let totalAverage = 0;
 
 for (let student of students) {
-  let total = student.korean + student.english + student.math;
-  totalSum += total / 3;
+  totalAverage += student.average;
 }
 
-let classAverage = totalSum / students.length;
+let classAverage = totalAverage / students.length;
 
 console.log("=== 전체 통계 ===");
 console.log(`전체 평균: ${classAverage.toFixed(2)}점`);
 
 // TODO: 최고 점수 학생 찾기
 let topStudent = students[0];
-let topAverage = (topStudent.korean + topStudent.english + topStudent.math) / 3;
 
 for (let student of students) {
-  let average = (student.korean + student.english + student.math) / 3;
-
-  if (average > topAverage) {
-    topAverage = average;
+  if (student.average > topStudent.average) {
     topStudent = student;
   }
 }
 
-console.log(`최고 점수 학생: ${topStudent.name} (${topAverage.toFixed(2)}점)`);
+console.log(
+  `최고 점수 학생: ${topStudent.name} (${topStudent.average.toFixed(2)}점)`,
+);
